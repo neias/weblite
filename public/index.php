@@ -33,7 +33,7 @@ $registry->set('load', $loader);
 
 $controller = new Front($registry);
 
-$action = new Action('page/');
+$action = new Action('home/index');
 
 echo('<pre>');
 print_r($registry);
