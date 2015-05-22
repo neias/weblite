@@ -15,32 +15,49 @@ define('HTTP_SERVER', $host . $_SERVER['SERVER_NAME'] . DS);
 define('DIR_ROOT', realpath(dirname(dirname(__FILE__))) . DS );
 define('DIR_TEMPLATE' , DIR_ROOT . 'template' . DS);
 define('DIR_LIBRARY' , DIR_ROOT . 'library' . DS);
+define('DIR_CONTROLLER' , DIR_ROOT . 'controller' . DS);
 
 require_once(DIR_LIBRARY . 'registry.php');
 require_once(DIR_LIBRARY . 'loader.php');
 require_once(DIR_LIBRARY . 'front.php');
+require_once(DIR_LIBRARY . 'controller.php');
 require_once(DIR_LIBRARY . 'action.php');
 require_once(DIR_LIBRARY . 'response.php');
 require_once(DIR_LIBRARY . 'request.php');
+require_once(DIR_LIBRARY . 'document.php');
 
 $registry = new Registry();
 
 $loader = new Loader($registry);
 $registry->set('load', $loader);
 
-//$request = new Request();
-// $registry->set('request', $request);
+// Request
+$request = new Request();
+$registry->set('request', $request);
+
+// Response
+$response = new Response();
+$response->addHeader('Content-Type: text/html; charset=utf-8');
+$response->setCompression(0);
+$registry->set('response', $response);
+
+// Document
+$registry->set('document', new Document());
 
 $controller = new Front($registry);
 
-$action = new Action('home/index');
+if (isset($request->get['route']) && $request->get['route'] != "")
+    $action = new Action($request->get['route']);
+else
+    $action = new Action('home/index');
 
-echo('<pre>');
-print_r($registry);
-echo('</pre>');
-die;
+// Dispatch
+$controller->dispatch($action, new Action('error/not_found'));
 
-// $response = new Response();
+// Output
+$response->output();
+
+die();
 
 $pages['index'] = 'Ana Sayfa';
 $pages['hakkimizda'] = 'Hakkımızda';

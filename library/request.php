@@ -35,4 +35,8 @@ class Request {
 
         return $data;
     }
+
+    public function unclean($data){
+        return htmlspecialchars_decode($data);
+    }
 }
