@@ -1,8 +1,4 @@
 <?php
-echo('<pre>');
-print_r($_GET);
-echo('</pre>');
-die;
 // SEPARATOR
 define('DS', DIRECTORY_SEPARATOR);
 

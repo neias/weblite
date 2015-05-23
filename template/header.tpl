@@ -14,16 +14,6 @@
 
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/css/animate.css">
-    <link rel="stylesheet" href="/css/simpletextrotator.css">
-
-    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link href="css/hover-min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/styles.css">
-
 
     <?php foreach ($links as $link): ?>
     <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
@@ -32,25 +22,15 @@
     <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
     <?php endforeach; ?>
 
-
-
-    <script src="/js/jquery-2.1.3.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.simple-text-rotator.min.js"></script>
-
-    <script type="text/javascript" src="/js/modernizr.custom.79639.js"></script>
-    <script type="text/javascript" src="/js/jquery.ba-cond.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.slitslider.js"></script>
-
+    <script src="/public/js/jquery-2.1.3.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
 
     <?php foreach ($scripts as $script): ?>
     <script type="text/javascript" src="<?php echo $script; ?>"></script>
     <?php endforeach; ?>
 
-
     <noscript>
-      <link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+      <link rel="stylesheet" type="text/css" href="/public/css/styleNoJS.css" />
     </noscript>
   </head>
   <body>
-    emre Acar
