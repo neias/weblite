@@ -13,6 +13,6 @@ class ControllerHome extends Controller {
 }
 ```
 
-Developing [Colony](https://koloni.com.tr)
+Developing [Colony](http://koloni.com.tr)
 
 
