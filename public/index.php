@@ -16,11 +16,13 @@ define('DIR_ROOT', realpath(dirname(dirname(__FILE__))) . DS );
 define('DIR_TEMPLATE' , DIR_ROOT . 'template' . DS);
 define('DIR_LIBRARY' , DIR_ROOT . 'library' . DS);
 define('DIR_CONTROLLER' , DIR_ROOT . 'controller' . DS);
+define('DIR_MODEL' , DIR_ROOT . 'model' . DS);
 
 require_once(DIR_LIBRARY . 'registry.php');
 require_once(DIR_LIBRARY . 'loader.php');
 require_once(DIR_LIBRARY . 'front.php');
 require_once(DIR_LIBRARY . 'controller.php');
+require_once(DIR_LIBRARY . 'model.php');
 require_once(DIR_LIBRARY . 'action.php');
 require_once(DIR_LIBRARY . 'response.php');
 require_once(DIR_LIBRARY . 'request.php');
